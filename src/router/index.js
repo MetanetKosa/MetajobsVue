@@ -4,6 +4,7 @@ import Member from '../pages/recruit/member.vue';
 import Resume from '../pages/recruit/resume.vue';
 import Post from '../pages/recruit/post.vue';
 import Review from '../pages/recruit/review.vue';
+import PostList from '../components/postList.vue';
 
 
 const router = createRouter({
@@ -30,6 +31,11 @@ const router = createRouter({
         {
             path: '/post',
             name: 'Post',
+            component: Post
+        },
+        {
+            path: '/postList',
+            name: 'PostList',
             component: Post
         },
         
