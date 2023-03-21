@@ -1,9 +1,17 @@
 <template>
-  <h1>resume page</h1>
+  <h1>Resume Page</h1>
+  <ResumeForm /> 
+  <!-- <ResumeList /> -->
 </template>
 
 <script>
-export default {
+import ResumeForm from '@/components/ResumeForm.vue';
+import ResumeList from '@/components/ResumeList.vue';
+export default {  
+  components: {
+    ResumeForm,
+    ResumeList
+  },
 
 }
 </script>
