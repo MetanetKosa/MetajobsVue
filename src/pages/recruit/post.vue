@@ -135,7 +135,7 @@
                 required>
 
             </div>
-            <div align="right">
+            <div style = "align: right">
             <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto"
            type = "submit" >등록<i
           class="fi-chevron-right fs-sm ms-2"></i></button>
@@ -154,8 +154,8 @@
     class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i
     class="btn-scroll-top-icon fi-chevron-up"> </i></a>
   <!-- Vendor scrits: js libraries and plugins-->
-  <!-- <script src="${path}/resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="${path}/resources/vendor/simplebar/dist/simplebar.min.js"></script>
+  <!-- <script src="${path}/resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="${path}/resources/vendor/simplebar/dist/simplebar.min.js"></script>
   <script src="${path}/resources/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
         <script src="${path}/resources/vendor/flatpickr/dist/flatpickr.min.js"></script> -->
   
@@ -167,11 +167,16 @@
 </template>
 
 <script>
+
 export default {
 
 }
 </script>
 
 <style>
-
+/* @import "./assets/resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js";
+@import "./assets/resources/vendor/simplebar/dist/simplebar.min.js";
+@import "./assets/resources/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js";
+@import "./assets/resources/vendor/flatpickr/dist/flatpickr.min.js";
+@import "./assets/resources/js/theme.min.js"; */
 </style>

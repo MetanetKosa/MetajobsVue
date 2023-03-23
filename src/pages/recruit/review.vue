@@ -1,5 +1,5 @@
 <template>
-  <h1>review page</h1>
+    <h1>review</h1>
 </template>
 
 <script>
