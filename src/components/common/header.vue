@@ -50,9 +50,13 @@
                     </ul>																						
                 
                 
+                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'SignIn'}">Sign in</router-link></a>
+                	<a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" href="#signup-modal"><i class="fi-plus me-2"></i><router-link class="nav-link" :to="{name: 'SignUp'}">Sign<span class='d-none d-sm-inline'> Up</span></router-link></a>
+                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signup-modal"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'MyPage'}">My<span class='d-none d-sm-inline'> Page</span></router-link></a>
+
                 <!-- 로그인하지 않은 상태 -->
                 <c:if test = "${member == null}">
-                	<a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Sign in</a>
+                <!-- <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Sign in</a> -->
                 	<!-- <a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" href="#signup-modal" data-bs-toggle="modal"><i class="fi-plus me-2"></i>Sign<span class='d-none d-sm-inline'> Up</span></a> -->
                 </c:if>
                 

@@ -4,9 +4,8 @@ module.exports = defineConfig({
   lintOnSave: false
 })
 
-// spring boot 연결
 // module.exports = {
 //   devServer: {
-//     proxy: 'http://localhost:8082'
+//     proxy: "http://localhost:8082"
 //   }
 // }
