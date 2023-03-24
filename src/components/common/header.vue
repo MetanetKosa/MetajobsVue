@@ -11,13 +11,23 @@
                     <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
                         <!-- Menu-->
                         
-                        <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4" href="${path}/post/postGet" ><i class="fi-layers me-2"></i><router-link class="nav-link" :to="{name: 'Post'}">공고 등록</router-link><span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
-                        <li class="nav-item dropdown me-lg-2"><a class="nav-link  align-items-center pe-lg-4" href="${path}/post/postList" ><i class="fi-layers me-2"></i>공고 목록<span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
-                        <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4" href="${path}/review/reviewList" ><i class="fi-layers me-2"></i><router-link class="nav-link" :to="{name: 'Review'}">면접 후기</router-link><span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
+                        <!-- <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4" ><i class="fi-layers me-2"></i><router-link class="nav-link" :to="{name: 'Post'}">공고 등록</router-link><span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
+                        <li class="nav-item dropdown me-lg-2"><a class="nav-link  align-items-center pe-lg-4"><i class="fi-layers me-2"></i>공고 목록<span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
+                        <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4"><i class="fi-layers me-2"></i><router-link class="nav-link" :to="{name: 'Review'}">면접 후기</router-link><span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
 
                         <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4" href="${path}/resume/resumeList?mem_no=1" ><i class="fi-layers me-2"></i><router-link class="nav-link" :to="{name: 'Resume'}">나의 이력서</router-link></a></li>
 
-                        <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Sign in</a></li>
+                        <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Sign in</a></li> -->
+                        <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4" href="${path}/post/postGet?mem_no=${member.mem_no}" ><router-link class="nav-link" :to="{name: 'Post'}">공고 등록</router-link><span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
+                        <li class="nav-item dropdown me-lg-2"><a class="nav-link  align-items-center pe-lg-4" href="${path}/post/postList" ><router-link class="nav-link" :to="{name: 'Post'}">공고 목록</router-link><span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
+                        <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4" href="${path}/review/reviewList" ><router-link class="nav-link" :to="{name: 'Review'}">면접 후기</router-link><span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span></a></li>
+
+                        <li class="nav-item dropdown me-lg-2"><a class="nav-link align-items-center pe-lg-4" href="${path}/resume/resumeList?mem_no=${member.mem_no}" ><router-link class="nav-link" :to="{name: 'Resume'}">나의 이력서</router-link></a></li>
+
+                        <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal">Sign in</a></li>
+                    
+                        
+                        
                     </ul>																						
                 
                 

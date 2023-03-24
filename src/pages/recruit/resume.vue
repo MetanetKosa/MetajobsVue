@@ -1,5 +1,4 @@
 <template>
-  <h1>Resume Page</h1>
   <!-- <ResumeForm />  -->
   <ResumeList /> 
 </template>
