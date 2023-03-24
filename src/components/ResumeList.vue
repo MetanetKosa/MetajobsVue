@@ -11,10 +11,10 @@
         <div class="bg-light shadow-sm rounded-3 p-4 p-md-5 mb-2">
             <div class="d-flex align-items-start justify-content-between pb-4 mb-2">
                 <div class="d-flex align-items-start">
-                    <!-- <div class="position-relative flex-shrink-0">
-                        <img class="rounded-circle" src="" width="100" alt="Annette Black">
+                     <div class="position-relative flex-shrink-0">
+                        <img class="rounded-circle" src="img/avatars/37.png" width="100" alt="Annette Black">
                         <button class="btn btn-icon btn-light btn-xs rounded-circle shadow-sm position-absolute end-0 bottom-0" type="button" data-bs-toggle="tooltip" title="Change image"><i class="fi-pencil fs-xs"></i></button>
-                    </div> -->
+                    </div> 
                     <div class="ps-3 ps-sm-4">
                         <h3 class="h5">이름</h3>
                         <ul class="list-unstyled fs-sm mb-0">
@@ -46,12 +46,12 @@
                         </ul><a class="btn btn-primary rounded-pill w-100" href="/resume/resumeInsert"><i class="fi-plus fs-sm me-2"></i>새 이력서 등록</a>
                     </div>     
                 </div>
-            </div>
+            
             <div class="col-md-9">
                 <div class="card bg-secondary card-hover mb-2">
-                    <div class="card-body">
+                    <div class="card-body" >
                         <div class="d-flex justify-content-between">
-                              <div class="d-flex align-items-start"><img class="d-none d-sm-block" src="${path}/resources/img/avatars/38.png" width="100" alt="Resume picture">
+                              <div class="d-flex align-items-start"><img class="d-none d-sm-block" src="img/avatars/38.png" width="100" alt="Resume picture">
                                 <div class="ps-sm-3">
                                 <h3 class="h6 card-title pb-1 mb-2"><a class="stretched-link text-nav text-decoration-none" href='/resume/resumeGet?resume_no=<c:out value="${resume.resume_no}"/>'><c:out value="${resume.resume_title}"/></a></h3>
                                  <div class="fs-sm">
@@ -60,32 +60,34 @@
                                     </div>
                                 </div>
                             </div>
+                             <div class="d-flex flex-column align-items-end justify-content-between">
+                                <div class="dropdown position-relative zindex-10 mb-3">
+                                    <button class="btn btn-icon btn-light btn-xs rounded-circle shadow-sm" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                                    <ul class="dropdown-menu my-1" aria-labelledby="contextMenu1">
+                                    <li>
+                                        <button class="dropdown-item" type="button"><i class="fi-edit opacity-60 me-2"></i>Edit</button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button"><i class="fi-flame opacity-60 me-2"></i>Promote</button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button"><i class="fi-download-file opacity-60 me-2"></i>Download as PDF</button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button"><i class="fi-power opacity-60 me-2"></i>Deactivate</button>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" type="button"><i class="fi-trash opacity-60 me-2"></i>Delete</button>
+                                    </li>
+                                    </ul>
+                                </div><strong class="fs-sm"><fmt:formatDate pattern="YYYY-MM-dd" value ="${resume.updateDate }"/></strong>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex flex-column align-items-end justify-content-between">
-                    <div class="dropdown position-relative zindex-10 mb-3">
-                        <button class="btn btn-icon btn-light btn-xs rounded-circle shadow-sm" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
-                        <ul class="dropdown-menu my-1" aria-labelledby="contextMenu1">
-                          <li>
-                            <button class="dropdown-item" type="button"><i class="fi-edit opacity-60 me-2"></i>Edit</button>
-                          </li>
-                          <li>
-                            <button class="dropdown-item" type="button"><i class="fi-flame opacity-60 me-2"></i>Promote</button>
-                          </li>
-                          <li>
-                            <button class="dropdown-item" type="button"><i class="fi-download-file opacity-60 me-2"></i>Download as PDF</button>
-                          </li>
-                          <li>
-                            <button class="dropdown-item" type="button"><i class="fi-power opacity-60 me-2"></i>Deactivate</button>
-                          </li>
-                          <li>
-                            <button class="dropdown-item" type="button"><i class="fi-trash opacity-60 me-2"></i>Delete</button>
-                          </li>
-                        </ul>
-                    </div><strong class="fs-sm"><fmt:formatDate pattern="YYYY-MM-dd" value ="${resume.updateDate }"/></strong>
-                </div>
+               
             </div>
+        </div>
         </div>
       </div>
 </template>
