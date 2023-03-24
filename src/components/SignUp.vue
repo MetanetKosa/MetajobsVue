@@ -7,7 +7,7 @@
                 <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span>Easily manage your Apply List</span></li>
                 <li class="d-flex mb-0"><i class="fi-check-circle text-primary mt-1 me-2"></i><span>Leave Interview reviews</span></li>
             </ul><img class="d-block mx-auto" src="img/signin-modal/signup.svg" width="344" alt="Illustartion">
-            <div class="mt-sm-4 pt-md-3">Already have an account? <a href="#modal-memSingin" data-bs-toggle="modal" data-bs-dismiss="modal">Sign in</a></div>
+            <div class="mt-sm-4 pt-md-3">Already have an account? <router-link :to="{name: 'SignIn'}">Sign in</router-link></div>
         </div>
         <div class="col-md-6 px-4 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5"><a class="btn btn-outline-info rounded-pill w-100 mb-3" href="#"><i class="fi-google fs-lg me-1"></i>Sign in with Google</a><a class="btn btn-outline-info rounded-pill w-100 mb-3" href="#"><i class="fi-facebook fs-lg me-1"></i>Sign in with Facebook</a>
             <div class="d-flex align-items-center py-3 mb-3">
@@ -54,21 +54,10 @@
                     <input class="form-check-input" type="checkbox" id="agree-to-terms" required>
                     <label class="form-check-label" for="agree-to-terms">By joining, I agree to the <a href='#'>Terms of use</a> and <a href='#'>Privacy policy</a></label>
                 </div>
-                <button class="btn btn-primary btn-lg rounded-pill w-100" type="submit">Create Member</button>
+                <button class="btn btn-primary btn-lg rounded-pill w-100" type="submit">Sign Up</button>
             </form>
         </div>
     </div>
-    
-    <div class="d-flex justify-content-between mb-3">
-        <h2>member page</h2>
-
-        <button 
-            class="btn btn-primary"
-            @click="moveToCreatePage">
-            Create Member
-        </button>
-    </div>
-
 </template>
 
 <script>

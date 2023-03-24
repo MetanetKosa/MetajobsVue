@@ -4,6 +4,9 @@ import Member from '../pages/recruit/member.vue';
 import Resume from '../pages/recruit/resume.vue';
 import Post from '../pages/recruit/post.vue';
 import Review from '../pages/recruit/review.vue';
+import SignUp from '@/components/SignUp.vue';
+import SignIn from '@/components/SignIn.vue';
+import MyPage from '@/components/MyPage.vue';
 
 
 const router = createRouter({
@@ -19,6 +22,24 @@ const router = createRouter({
             path: '/member',
             name: 'Member',
             component: Member
+        },
+
+        {
+            path: '/signup',
+            name: 'SignUp',
+            component: SignUp
+        },
+
+        {
+            path: '/signin',
+            name: 'SignIn',
+            component: SignIn
+        },
+
+        {
+            path: '/mypage',
+            name: 'MyPage',
+            component: MyPage
         },
 
         {
