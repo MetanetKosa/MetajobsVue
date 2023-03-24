@@ -1,7 +1,8 @@
 <template>
    <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header>
             <div class="container">
-                <a class="navbar-brand me-3 me-xl-4" href="${path}/"><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></a>
+                <router-link class="nav-link " :to="{name: 'Home'}" ><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></router-link>
+                <!-- <a class="navbar-brand me-3 me-xl-4" href="${path}/"><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></a> -->
                 
                 <!-- ************************************* 로그인 로그아웃 버튼 -->
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
