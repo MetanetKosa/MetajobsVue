@@ -1,5 +1,5 @@
 <template>
-  <h1>MetaJobs HomePage</h1>
+ 
 </template>
 
 <script>
