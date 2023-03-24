@@ -39,12 +39,12 @@
      <main class="page-wrapper">
         <!-- Page content-->
         <!-- Page container-->
-        <div class="container mt-5 mb-md-4 py-5">
+        <div class="container mt-5 pt-5 mb-md-4 py-5">
             <!-- Page content-->
             <div class="row justify-content-center pb-sm-2">
-                <div class="col-lg-11 col-xl-10">
+                <div class="col-lg-11 col-xl-10 mt-5">
                     <!-- Page title-->
-                    <h1 class="h2 text-center pb-4 mb-3">My Page</h1>
+                    <!-- <h1 class="h2 text-center pb-4 mb-3">My Page</h1> -->
 
                     <!-- Step 5: Review-->
                     <div class="bg-light rounded-3 pt-4 pb-0 px-4 p-md-5 mb-3">
@@ -55,7 +55,7 @@
                                 <div class="dropdown d-lg-none">
                                     <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="fi-align-justify me-1"></i>Actions</button>
                                     <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item" href="#">
-                                    	<i class="fi-trash me-2"></i>Delete</a>
+                                    <i class="fi-trash me-2"></i>Delete</a>
                                     </div>
                                 </div>
                             </div>
@@ -86,14 +86,6 @@
 
                                     </ul>
                                 </div>
-                                <div class="border-top py-4">
-                                    <h4 class="h5">첨부파일</h4>
-                                    <div class="mt-3">                                
-                                        <p></p>
-                                        <div class="d-flex">
-                                        </div>                              
-                                  	 </div>                                 
-                                </div>
                             </div>
                         </div>
                         <!-- Navigation-->
@@ -102,8 +94,8 @@
                         </div>
                     </div>
                     <form id='operForm' action="/resume/resumeModify" method="get">
-                    	<input type='hidden' id= 'resume_no' name='resume_no' value='<c:out value="${resume.resume_no}"/>'>
-                    	<input type='hidden' id= 'mem_no' name='mem_no' value='<c:out value="${resume.mem_no}"/>'>
+                    <input type='hidden' id= 'resume_no' name='resume_no' value='<c:out value="${resume.resume_no}"/>'>
+                    <input type='hidden' id= 'mem_no' name='mem_no' value='<c:out value="${resume.mem_no}"/>'>
                     </form>
                 </div>
             </div>

@@ -53,8 +53,6 @@ const router = createRouter({
             name: 'Post',
             component: Post
         },
-        
-        
         {
             path: '/review',
             name: 'Review',

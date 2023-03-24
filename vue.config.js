@@ -4,8 +4,8 @@ module.exports = defineConfig({
   lintOnSave: false
 })
 
-module.exports = {
-  devServer: {
-    proxy: "http://localhost:8082"
-  }
-}
+// module.exports = {
+//   devServer: {
+//     proxy: "http://localhost:8082"
+//   }
+// }
