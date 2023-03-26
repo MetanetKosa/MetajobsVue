@@ -4,6 +4,7 @@ import Member from '../pages/recruit/member.vue';
 import Resume from '../pages/recruit/resume.vue';
 import Post from '../pages/recruit/post.vue';
 import Review from '../pages/recruit/review.vue';
+import ReviewRegist from '../pages/recruit/reviewRegist.vue';
 import SignUp from '@/components/SignUp.vue';
 import SignIn from '@/components/SignIn.vue';
 import MyPage from '@/components/MyPage.vue';
@@ -11,8 +12,7 @@ import MyPage from '@/components/MyPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [
-        {
+    routes: [{
             path: '/',
             name: 'Home',
             component: Home
@@ -47,7 +47,7 @@ const router = createRouter({
             name: 'Resume',
             component: Resume
         },
-        
+
         {
             path: '/post',
             name: 'Post',
@@ -58,8 +58,13 @@ const router = createRouter({
             name: 'Review',
             component: Review
         },
+        {
+            path: '/review/reviewRegist',
+            name: 'ReviewRegist',
+            component: ReviewRegist
+        },
     ]
-        
+
 });
 
 export default router;

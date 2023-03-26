@@ -1,9 +1,8 @@
 <template lang="">
     <!-- Review modal-->
-    <div class="modal fade" id="modal-review" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header d-block position-relative border-0 pb-0 px-sm-5 px-4">
+        <div class="mt-5 modal-dialog modal-dialog-centered">
+            <div class="mt-5 modal-content border-0">
+                <div class="modal-header d-block border-0 pb-0 px-sm-5 px-4">
                     <h3 class="modal-title mt-4 text-center">Leave a review</h3>
                     <button class="btn-close position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -55,20 +54,20 @@
                                 <div class="col-6">
                                     <label class="form-label" for="pnum">면접인원 <span class='text-danger'>*</span></label>
                                     <select class="form-control form-select" style="width:150px;" id="pnum" name="pnum" required>
-        <option value="" selected disabled hidden>면접인원</option>
-        <option value="단독면접">단독면접</option>
-        <option value="개인면접">개인면접</option>
-        <option value="집단면접">집단면접</option>
-    </select>
+                                        <option value="" selected disabled hidden>면접인원</option>
+                                        <option value="단독면접">단독면접</option>
+                                        <option value="개인면접">개인면접</option>
+                                        <option value="집단면접">집단면접</option>
+                                    </select>
                                 </div>
                                 <div class="col-6">
                                     <label class="form-label" for="reResult">면접결과 <span class='text-danger'>*</span></label>
                                     <select class="form-control form-select" style="width:150px;" id="reResult" name="reResult" required>
-        <option value="" selected disabled hidden>면접결과</option>
-        <option value="합격">합격</option>
-        <option value="불합격">불합격</option>
-        <option value="대기중">대기중</option>
-    </select>
+                                        <option value="" selected disabled hidden>면접결과</option>
+                                        <option value="합격">합격</option>
+                                        <option value="불합격">불합격</option>
+                                        <option value="대기중">대기중</option>
+                                    </select>
                                 </div>
 
                             </div>
@@ -83,7 +82,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 <script>
 export default {

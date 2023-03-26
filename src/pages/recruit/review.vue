@@ -4,8 +4,6 @@
 <!-- Page content-->
 
 
-
-
     <!-- Post content-->
     <section class="container mb-5 pb-1">
 
@@ -80,7 +78,9 @@
 
                 <!-- Reviews-->
                 <div class="mt-3 mb-4 pb-4 border-bottom">
-                    <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch justify-content-between"><a class="btn btn-outline-primary mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal"><i class="fi-edit me-1"></i>리뷰 등록</a>
+                    <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch justify-content-between">
+                        <!-- <a class="btn btn-outline-primary mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal"><i class="fi-edit me-1"></i>리뷰 등록</a> -->
+                        <button class="btn btn-outline-primary mb-sm-0 mb-3" @click="moveToCreatePage"><i class="fi-edit me-1"></i>리뷰 등록</button>
                         <div class="d-flex align-items-center ms-sm-4">
                             <p class="pt-4 mb-0">총 ${total}건</p>
                         </div>
@@ -155,13 +155,34 @@
                 </div>
             </div>
         </div>
+        <div>
+        </div>
+
         </section>
 </main>
    
 </template>
 
 <script>
+    import { useRouter } from 'vue-router';
+
 export default {
+
+
+    setup() {
+        const router = useRouter();
+
+        const moveToCreatePage = () => {
+        router.push({
+          name: 'ReviewRegist'
+        });
+      }
+      
+      
+      return{
+          moveToCreatePage
+      }
+    }
 
 }
 </script>
