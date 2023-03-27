@@ -78,7 +78,7 @@
                             <textarea class="form-control" id="reContent" name="reContent" rows="5" placeholder="후기 내용을 적어주세요." required></textarea>
                             <div class="invalid-feedback">후기 내용을 적어주세요.</div>
                         </div>
-                        <button class="btn btn-primary d-npmblock w-100 mb-4" type="submit">리뷰 등록</button>
+                        <button class="btn btn-primary d-block w-100 mb-4" type="submit">리뷰 등록</button>
                     </form>
                 </div>
             </div>

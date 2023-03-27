@@ -4,7 +4,7 @@
 
 <script>
 
-import axios from 'axios';
+// import axios from 'axios';
 import { reactive } from 'vue';
 import PostDetail from '../../components/post/PostDetail.vue';
 export default {
@@ -19,7 +19,7 @@ export default {
        const postNo = route.params.postNo;
 
        const getPost = async() => {
-            const res = await axios.get(`localhost:8082/post/${postNo}`);
+            // const res = await axios.get(`localhost:8082/post/${postNo}`);
             postDe.value = {...res.data};
             console.log(postDe.value);
  
