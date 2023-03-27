@@ -11,7 +11,7 @@ import MyPage from '@/components/MyPage.vue';
 
 // import PostList from '@/components/post/PostList.vue';
 import PostInsert from '@/components/post/PostInsert.vue';
-
+// import PostDetail from '@/components/post/PostDetail.vue';
 
 
 const router = createRouter({
@@ -62,6 +62,11 @@ const router = createRouter({
             name: 'PostInsert',
             component: PostInsert
         },
+        // {
+        //     path: '/postDetail/:postNo',
+        //     name: 'PostDetail',
+        //     component: PostDetail
+        // },
         {
             path: '/review',
             name: 'Review',

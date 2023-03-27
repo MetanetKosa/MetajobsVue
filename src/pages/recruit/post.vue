@@ -3,7 +3,6 @@
 </template>
 
 <script>
-console.log("PostList 확인 :"   );
 import axios from 'axios';
 import { reactive } from 'vue';
 import PostList from '@/components/post/PostList.vue';
@@ -24,23 +23,6 @@ export default {
     return {state}
   }
 }
-// export default {
-//     components: {
-//         PostList,
-//     },
-//     setup(){
-//         const state = reactive({
-//             posts: []
-//         })
-//         axios.get("/posts").then(({data})=>{
-//             state.posts = data;
-//             console.log(data);  
-//         });
-//         return{
-//             state
-//         }
-//     }
-// }
 </script>
 
 <style>
