@@ -43,17 +43,17 @@
                             <li><a class="nav-link fw-normal d-flex align-items-center px-0 py-1" href="#"><i class="fi-file opacity-70 me-2"></i><span>Publihed</span><span class="text-muted ms-auto">(3)</span></a></li>
                             <li><a class="nav-link fw-normal d-flex align-items-center px-0 py-1" href="#"><i class="fi-file-clean opacity-70 me-2"></i><span>Drafts</span><span class="text-muted ms-auto">(0)</span></a></li>
                             <li><a class="nav-link fw-normal d-flex align-items-center px-0 py-1" href="#"><i class="fi-archive opacity-70 me-2"></i><span>Archived</span><span class="text-muted ms-auto">(0)</span></a></li>
-                        </ul><a class="btn btn-primary rounded-pill w-100" href="/resume/resumeInsert"><i class="fi-plus fs-sm me-2"></i>새 이력서 등록</a>
+                        </ul><router-link class="btn btn-primary rounded-pill w-100" :to="{name: 'ResumeInsert'}"><i class="fi-plus fs-sm me-2"></i>새 이력서 등록</router-link>
                     </div>     
                 </div>
             
             <div class="col-md-9">
-                <div class="card bg-secondary card-hover mb-2" v-for="(resume,index) in resumes" :key="index" >
+                <div class="card bg-secondary card-hover mb-2" v-for="(resume,index) in resumes" :key="resume.resume_no" >
                     <div class="card-body" >
                         <div class="d-flex justify-content-between">
                               <div class="d-flex align-items-start"><img class="d-none d-sm-block" src="img/avatars/38.png" width="100" alt="Resume picture">
                                 <div class="ps-sm-3">
-                                <h3 class="h6 card-title pb-1 mb-2"><a class="stretched-link text-nav text-decoration-none" href='/resume/resumeGet?resume_no=<c:out value="${resume.resume_no}"/>'><c:out value="${resume.resume_title}"/></a></h3>
+                                <h3 class="h6 card-title pb-1 mb-2"><a class="stretched-link text-nav text-decoration-none" @click="moveToPage(resume.resume_no)"></a></h3>
                                  <div class="fs-sm">
                                     <div class="text-nowrap mb-2"><i class="fi-map-pin text-muted me-1"> </i>{{resume.resume_title}}</div>
                                 <!--  <div class="text-nowrap"><i class="fi-cash fs-base text-muted me-1"></i>$4,000</div> -->
@@ -93,6 +93,7 @@
 </template>
 
 <script>
+import {useRouter} from 'vue-router';
 export default {
     props: {
         resumes: Object,
@@ -104,7 +105,25 @@ export default {
                     resume_technology:'',
                     resume_updateDate:''};
         }
+    },
+    setup(props){
+         const router = useRouter();
+
+        const moveToPage = (resumeId) => {
+            console.log(resumeId);
+            router.push({
+                name:'Resume',
+                params:{
+                    id: resumeId
+                }
+            })
+           
+        }
+        return {
+        moveToPage,
+        }
     }
+   
 }
 </script>
 
