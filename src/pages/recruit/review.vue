@@ -86,9 +86,9 @@
                         </div>
                     </div>
                 </div>
-                <c:if test="${total == 0}">
+                <div v-if="!reviews.length">
                     검색 결과가 없습니다.
-                </c:if>
+                </div>
 
                 <div style="min-height:300px;">
                     <c:forEach items="${list}" var="review">
@@ -164,12 +164,15 @@
 </template>
 
 <script>
+    import axios from "axios";
+    import { async } from "rxjs";
     import { useRouter } from 'vue-router';
 
 export default {
 
 
     setup() {
+        const reviews = ref([]);
         const router = useRouter();
 
         const moveToCreatePage = () => {
@@ -181,6 +184,19 @@ export default {
       
       return{
           moveToCreatePage
+      }
+
+      const getReviews = async () => {
+        try {
+            const res = await axios.get(
+                "http://localhost:8082/todos"
+                );
+            
+                reviews.value = res.data;
+            
+        } catch (error) {
+            console.log(error);
+        }
       }
     }
 
