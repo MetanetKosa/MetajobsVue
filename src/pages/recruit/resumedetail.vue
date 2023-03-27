@@ -20,9 +20,7 @@ export default {
        
        const resumeId = route.params.id;
 
-        const state = reactive({
-            resumes: []
-        })
+     
 
        const getResume = async() => {
             const res = await axios.get(`/users/1/resumes/${resumeId}`);
@@ -38,7 +36,7 @@ export default {
        getResume();
         return {
         resume,
-        state,
+        
         }
     }
    
