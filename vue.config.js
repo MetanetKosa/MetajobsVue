@@ -3,11 +3,12 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
   devServer: {
-    proxy:  {
+    proxy: {
       '/posts' :{
         target: "http://localhost:8081"
       }
     }
+    
   }
 })
 

@@ -9,10 +9,12 @@
             <h2 class="h4 mb-4">
                 <i class="fi-info-circle text-primary fs-5 mt-n1 me-2"></i>이력서
             </h2>
-            <form role="form" >
+            <form  @submit.prevent = "onSubmit" role="form" >
               <div class="row">
                 <div class="col-12 mb-4" >
-                    <input  class="form-control form-control-lg" type="text"
+                    <input  class="form-control form-control-lg" 
+                    type="text"
+                   
 										placeholder="
                                     이력서 제목을 입력하세요(100자까지 가능)*">
                 </div>
@@ -28,15 +30,19 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-6 mb-4">
-                    <select  class="form-select form-select-lg" id="pr-country" name="resume_gender" required>
-                      <option value="" disabled selected>성별*</option>
-                      <option value="여">여</option>
-                      <option value="남">남</option>
-                    </select>
+                    <select  class="form-select form-select-lg" id="pr-country"
+											name="resume_gender"
+                       required>
+					    <option value="" disabled selected>성별*</option>
+						<option value="여">여</option>
+						<option value="남">남</option>
+					</select>
                   </div>
                   <div class="col-sm-6 mb-4">
                     <select  class="form-select form-select-lg" id="pr-city"
-											name="resume_career" required>
+											name="resume_career"
+                      
+                       required>
 											<option value="" disabled selected>경력여부*</option>
 											<option value="신입">신입</option>
 											<option value="경력">경력</option>
@@ -47,12 +53,14 @@
 									<label class="form-label fw-bold pb-1 mb-2">보유기술 및 능력</label> 
                   <input class="form-control form-control-lg" type="text"
 										id="pr-address" name="resume_technology"
+                    
 										placeholder="보유기술 입력(ex.문서작성능력, java 등)">
 							</div>
               <div class="col-12 mb-4">
 									<label class="form-label fw-bold pb-1 mb-2">자기소개서</label>
 									<textarea  class="form-control form-control-lg" id="pr-address"
-										name="resume_cv" cols="30" rows="10" placeholder="내용을 입력하세요 "
+										name="resume_cv" cols="30" rows="10" 
+                    placeholder="내용을 입력하세요 "
 										style="height: 272px; resize: none;"></textarea>
 							</div>
               <div class="d-md-flex align-items-center mb-4 pb-md-2">
@@ -86,7 +94,6 @@
 <script>
 
 export default {
-
   
   }
 

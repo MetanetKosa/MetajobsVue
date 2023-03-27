@@ -300,58 +300,56 @@
      
      
      <!-- <c:forEach items = "${postList}" var = "post"> -->
-     <div v-for = "{post,index} in postLists" :key="index">
      <!-- postList 공고목록-->
-     <div class="card bg-secondary card-hover mb-2">
-         <div class="card-body">
-             <div class="d-flex justify-content-between align-items-start mb-2">
-                 <div class="d-flex align-items-center"><img class="me-2" src="${path}/resources/img/job-board/company/it-pro.png" width="24" alt=""><span class="fs-sm text-dark opacity-80 px-1"> ~ <fmt:formatDate pattern="MM/dd" value="{{post.postFdate}}" /></span></div>
-                 <div class="dropdown content-overlay">
-                     <button class="btn btn-icon btn-light btn-xs rounded-circle shadow-sm" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
-                     <ul class="dropdown-menu my-1" aria-labelledby="contextMenu1">
-                         <li>
-                             <button class="dropdown-item" type="button"><i class="fi-heart opacity-60 me-2"></i>Add to Saved Jobs</button>
-                         </li>
-                         <li>
-                             <button class="dropdown-item" type="button"><i class="fi-x-circle opacity-60 me-2"></i>Not interested</button>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-             <h3 class="h6 card-title pt-1 mb-3">{{post.postTitle}}
-            	 <!-- <%-- <a class="text-nav stretched-link text-decoration-none" href="/post/postDetail?post_no=${post.postNo}">  --%> -->
-	             <!-- <a id = "move" class="text-nav stretched-link text-decoration-none" href="/post/postDetail?post_no=${post.postNo}"> 
-	             </a> -->
-             </h3>
-             <div class="fs-sm">
-             <span class="text-nowrap me-3"><i class="fi-map-pin text-muted me-1"> </i>{{post.postAdd}}</span>
-             <span class="text-nowrap me-3"><i class="fi-cash fs-base text-muted me-1"></i>{{post.postJob}} </span>
-             <span class="text-nowrap me-3">{{post.postEdu}}</span>
-             <span class="text-nowrap me-3"> | 등록일 <fmt:formatDate pattern="MM/dd" value="{{post.postSdate}}" /></span>
-             
-             </div>
-         </div>
-     </div>
-     <!-- </c:forEach> -->
-    </div> 
+        <div class="card bg-secondary card-hover mb-2"  v-for = "(post,index) in posts" :key="index">
+            <div class="card-body" >
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <!-- <div class="d-flex align-items-center"><img class="me-2" src="${path}/resources/img/job-board/company/it-pro.png" width="24" alt=""><span class="fs-sm text-dark opacity-80 px-1"> ~ <fmt:formatDate pattern="MM/dd" value="{{post.postFdate}}" /></span></div> -->
+                    <div class="dropdown content-overlay">
+                        <button class="btn btn-icon btn-light btn-xs rounded-circle shadow-sm" type="button" id="contextMenu1" data-bs-toggle="dropdown" aria-expanded="false"><i class="fi-dots-vertical"></i></button>
+                        <ul class="dropdown-menu my-1" aria-labelledby="contextMenu1">
+                            <li>
+                                <button class="dropdown-item" type="button"><i class="fi-heart opacity-60 me-2"></i>Add to Saved Jobs</button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item" type="button"><i class="fi-x-circle opacity-60 me-2"></i>Not interested</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="h6 card-title pt-1 mb-3">{{post.postTitle}}
+                    <!-- <%-- <a class="text-nav stretched-link text-decoration-none" href="/post/postDetail?post_no=${post.postNo}">  --%> -->
+                    <!-- <a id = "move" class="text-nav stretched-link text-decoration-none" href="/post/postDetail?post_no=${post.postNo}"> 
+                    </a> -->
+                </h3>
+                <div class="fs-sm">
+                <span class="text-nowrap me-3"><i class="fi-map-pin text-muted me-1"> </i>{{post.postAdd}}</span>
+                <span class="text-nowrap me-3"><i class="fi-cash fs-base text-muted me-1"></i>{{post.postJob}} </span>
+                <span class="text-nowrap me-3">{{post.postEdu}}</span>
+                <!-- <span class="text-nowrap me-3"> | 등록일 <fmt:formatDate pattern="MM/dd" value="{{post.postSdate}}" /></span> -->
+                </div>
+            </div>
+        </div>
+        <!-- </c:forEach> -->
+
      <!-- 반복문 -->
 
 
                                <!-- Pagination-->
-                    <nav class="mt-2 mb-4" aria-label="Reviews pagination">
+                    <!-- <nav class="mt-2 mb-4" aria-label="Reviews pagination">
                         <ul class="pagination">
                            <c:if test="${pageMaker.prev}">
                                <li class="page-item"><a class="page-link" href="#" aria-label="Prev"><i class="fi-chevron-left"></i></a></li>
                            </c:if>
                            
                             <li class="page-item d-sm-none"><span class="page-link page-link-static">1 / 5</span></li>
-                            <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+                            <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}"> -->
                          <!--       <li class="page-item active d-none d-sm-block" aria-current="page"> -->
                                <!--<li class="page-item ${pageMaker.cri.pageNum == num ? "active" : "" }" aria-current="page">
                                   <a class="page-link" href="${num}"><c:out value="${num}"/></a>
                                   <span class="visually-hidden">(current)</span>
                                </li> -->
-                            </c:forEach>
+                            <!-- </c:forEach>
                            <c:if test="${pageMaker.prev}">
                                <li class="page-item"><a class="page-link" href="#" aria-label="Next"><i class="fi-chevron-right"></i></a></li>
                            </c:if>
@@ -362,7 +360,7 @@
 		                     <input type='hidden' name='amount' value='${pageMaker.cri.amount}'>                        
                         </form>
                         
-                    </nav>
+                    </nav> -->
 						
 							</div>
 
@@ -411,17 +409,15 @@
 
 <script>
 export default{
-        props:{
-            postLists : Object,
-            default: () =>{
-                return {
-                    postTitle: '',
-                    postAdd: '',
-                    postJob: '',
-                    postEdu: '',
-                    postSdate: '',
-                    postFdate: '',
-            }
+    props:{
+        posts : Object,
+        default: () =>{
+            return {
+                postTitle: '',
+                postAdd: '',
+                postJob: '',
+                postEdu: ''
+            };
         }
     }
 }

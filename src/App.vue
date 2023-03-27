@@ -34,12 +34,15 @@
 </template>
 
 <script>
+
 import Header from "./components/common/header.vue"
 export default {
   name: 'App',
   components:{
     Header
-  }
+  },
+  
+  
 }
 // import SignIn from '@/components/SignIn.vue';
 // import SignUp from '@/components/SignUp.vue';
