@@ -41,8 +41,8 @@
                             </a>
                         </li>
 
-                        
-
+                        <!-- <router-link class="nav-link fi-layers me-2" :to="{name: 'PostDetail'}" >공고 목록</router-link>
+                        <router-link class="nav-link fi-layers me-2" :to="{name: 'PostModify'}" >공고 목록</router-link> -->
                         <!-- <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal">Sign in</a></li> -->
                     
                         
