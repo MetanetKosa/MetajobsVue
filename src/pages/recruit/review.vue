@@ -156,9 +156,9 @@ export default {
       getReviews();
       
       return{
-          moveToCreatePage,
-          reviews,
-             getReviews
+            moveToCreatePage,
+            reviews,
+            getReviews
       }
 
 
