@@ -302,7 +302,7 @@
      <!-- <c:forEach items = "${postList}" var = "post"> -->
      <!-- postList 공고목록-->
         <div class="card bg-secondary card-hover mb-2"  v-for = "(post,index) in posts" :key="index">
-            <div class="card-body" >
+            <div class="card-body">
                 <div class="d-flex justify-content-between align-items-start mb-2">
                     <!-- <div class="d-flex align-items-center"><img class="me-2" src="${path}/resources/img/job-board/company/it-pro.png" width="24" alt=""><span class="fs-sm text-dark opacity-80 px-1"> ~ <fmt:formatDate pattern="MM/dd" value="{{post.postFdate}}" /></span></div> -->
                     <div class="dropdown content-overlay">
@@ -317,8 +317,8 @@
                         </ul>
                     </div>
                 </div>
-                <h3 class="h6 card-title pt-1 mb-3">{{post.postTitle}}
-                    <!-- <%-- <a class="text-nav stretched-link text-decoration-none" href="/post/postDetail?post_no=${post.postNo}">  --%> -->
+                <h3 class="h6 card-title pt-1 mb-3">{{post.postTitle}} 
+                   <a class="text-nav stretched-link text-decoration-none" @click="moveToPage(post.postNo)"></a>
                     <!-- <a id = "move" class="text-nav stretched-link text-decoration-none" href="/post/postDetail?post_no=${post.postNo}"> 
                     </a> -->
                 </h3>
@@ -408,18 +408,53 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
 export default{
     props:{
         posts : Object,
         default: () =>{
             return {
+                postNo:'',
                 postTitle: '',
                 postAdd: '',
                 postJob: '',
                 postEdu: ''
             };
         }
+    },
+
+    setup(props){
+        const router = useRouter();
+        const moveToPage = (postNo) => {
+            console.log(postNo);
+            //router.push('/todos/' + router);
+            router.push({//경로의 복잡성을 줄일 수 있음
+                name:'PostDetail',
+                params:{
+                    postNo:postNo
+                }
+            })
+        }
+        return {
+            moveToPage,
+        }
     }
+
+    // setup(){
+    //     const moveToPage = (postNo) => {
+    //         console.log(postNo);
+    //         //router.push('/todos/' + router);
+    //         router.push({//경로의 복잡성을 줄일 수 있음
+    //             name:'PostDetail',
+    //             params:{
+    //                 postNo:postNo
+    //             }
+    //         })
+    //     }
+    //     return {
+    //         moveToPage,
+    //     }
+    // }
 }
 </script>
 

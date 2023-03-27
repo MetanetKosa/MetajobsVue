@@ -165,7 +165,7 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="job-board-home-v1.html">공고목록</a></li>
                             <li class="breadcrumb-item"><a href="job-board-catalog.html">채용정보</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">${post.postTitle }</li>
+                            <li class="breadcrumb-item active" aria-current="page" ></li>
                         </ol>
                     </nav>
                     <div class="row">
@@ -235,7 +235,9 @@
 
 <script>
 export default {
-
+  props:{
+    postDetailValue: Object,
+  }
 }
 </script>
 
