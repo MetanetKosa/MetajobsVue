@@ -67,11 +67,14 @@ const router = createRouter({
         //     name: 'PostDetail',
         //     component: PostDetail
         // },
+<<<<<<< HEAD
         {
             path: '/postDetail/:postNo',
             name: 'PostDetail',
             component: PostDetail
         },
+=======
+>>>>>>> ceb56edee59f287b9cb8088ffcee294f5ebf9b0d
         {
             path: '/review',
             name: 'Review',
