@@ -48,14 +48,14 @@
                 </div>
             
             <div class="col-md-9">
-                <div class="card bg-secondary card-hover mb-2">
+                <div class="card bg-secondary card-hover mb-2" v-for="(resume,index) in resumes" :key="index" >
                     <div class="card-body" >
                         <div class="d-flex justify-content-between">
                               <div class="d-flex align-items-start"><img class="d-none d-sm-block" src="img/avatars/38.png" width="100" alt="Resume picture">
                                 <div class="ps-sm-3">
                                 <h3 class="h6 card-title pb-1 mb-2"><a class="stretched-link text-nav text-decoration-none" href='/resume/resumeGet?resume_no=<c:out value="${resume.resume_no}"/>'><c:out value="${resume.resume_title}"/></a></h3>
                                  <div class="fs-sm">
-                                    <div class="text-nowrap mb-2"><i class="fi-map-pin text-muted me-1"> </i><c:out value="${resume.resume_career}"/></div>
+                                    <div class="text-nowrap mb-2"><i class="fi-map-pin text-muted me-1"> </i>{{resume.resume_title}}</div>
                                 <!--  <div class="text-nowrap"><i class="fi-cash fs-base text-muted me-1"></i>$4,000</div> -->
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                         <button class="dropdown-item" type="button"><i class="fi-trash opacity-60 me-2"></i>Delete</button>
                                     </li>
                                     </ul>
-                                </div><strong class="fs-sm"><fmt:formatDate pattern="YYYY-MM-dd" value ="${resume.updateDate }"/></strong>
+                                </div><strong class="fs-sm">{{resume.resume_updateDate}}<fmt:formatDate pattern="YYYY-MM-dd"/></strong>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,17 @@
 
 <script>
 export default {
-
+    props: {
+        resumes: Object,
+        default: () => {
+            return {resume_career:'',
+                    resume_cv:'',
+                    resume_gender:'',
+                    resume_title:'',
+                    resume_technology:'',
+                    resume_updateDate:''};
+        }
+    }
 }
 </script>
 

@@ -1,9 +1,11 @@
 <template>
-  <!-- <ResumeForm />  -->
-  <ResumeList /> 
+  <!-- <ResumeForm  />  -->
+   <ResumeList :resumes="state.resumes" /> 
 </template>
 
 <script>
+import axios from "axios";
+import {reactive} from "vue";
 import ResumeForm from '@/components/ResumeForm.vue';
 import ResumeList from '@/components/ResumeList.vue';
 export default {  
@@ -11,6 +13,18 @@ export default {
     ResumeForm,
     ResumeList
   },
+  setup(){
+    const state = reactive({
+      resumes: []
+    })
+
+    axios.get("/users/1/resumes").then(({data}) =>{
+      state.resumes = data;
+      console.log(data);
+    });
+    return {state}
+  }
+ 
 
 }
 </script>

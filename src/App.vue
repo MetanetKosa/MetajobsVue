@@ -25,12 +25,15 @@
 </template>
 
 <script>
+
 import Header from "./components/common/header.vue"
 export default {
   name: 'App',
   components:{
     Header
-  }
+  },
+  
+  
 }
 
 </script>
