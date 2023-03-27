@@ -1,11 +1,13 @@
 <template>
-<ResumeDetail :resumes="resume"/> 
+<ResumeDetail :resumes="resume"
+@delete-resume="deleteResume"
+/> 
 <!-- <input v-model="resume.resume_title" type="text" class="form-control"> -->
 </template>
 
 <script>
 import ResumeDetail from '@/components/ResumeDetailForm.vue';
-import {useRoute} from 'vue-router';
+import {useRoute, useRouter} from 'vue-router';
 import axios from 'axios';
 import {ref} from '@vue/reactivity';
 import {reactive} from "vue";
@@ -15,9 +17,9 @@ export default {
   },
     setup(){
         const route = useRoute();
+         const router = useRouter();
         const resume = ref(null);
-        // const originalResume = ref(null);
-       
+        
        const resumeId = route.params.id;
 
      
@@ -33,10 +35,24 @@ export default {
     
         
        };
-       getResume();
+      
+
+       const deleteResume = async(resumeNo) => {
+        console.log(resumeNo);
+        try{
+            await axios.delete(`/users/1/resumes/${resumeNo}` );
+             router.push({path: '/resume'});
+           
+
+        }catch(err){
+            console.log(err);
+        }
+       }
+        
+        getResume();
         return {
         resume,
-        
+        deleteResume,
         }
     }
    
