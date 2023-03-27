@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from '../pages/home.vue';
 import Member from '../pages/recruit/member.vue';
-import Resume from '../pages/recruit/resume.vue';
-import PostList from '../pages/recruit/post.vue';
-
+import Resumes from '../pages/recruit/resume.vue';
+import Resume from '../pages/recruit/resumedetail.vue';
+import ResumeInsert from '@/components/ResumeForm.vue';
+import Post from '../pages/recruit/post.vue';
 import Review from '../pages/recruit/review.vue';
 import SignUp from '@/components/SignUp.vue';
 import SignIn from '@/components/SignIn.vue';
@@ -49,9 +50,20 @@ const router = createRouter({
 
         {
             path: '/resume',
+            name: 'Resumes',
+            component: Resumes
+        },
+        {
+            path: '/resume/:id',
             name: 'Resume',
             component: Resume
         },
+        {
+            path: '/resumeInsert',
+            name: 'ResumeInsert',
+            component: ResumeInsert
+        },
+        
         {
             path: '/postList',
             name: 'PostList',

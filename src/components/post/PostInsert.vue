@@ -171,7 +171,7 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 import { reactive } from 'vue';
 export default {
 
@@ -214,6 +214,7 @@ export default {
           //  alert('공고가 등록되었습니다.');
           //   router.push({path: "/postList"})
           // })
+
               
           } 
 
