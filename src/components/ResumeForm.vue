@@ -9,12 +9,12 @@
             <h2 class="h4 mb-4">
                 <i class="fi-info-circle text-primary fs-5 mt-n1 me-2"></i>이력서
             </h2>
-            <form  @submit.prevent = "onSubmit" role="form" >
+            <form  @submit.prevent = "onSave" role="form" >
               <div class="row">
                 <div class="col-12 mb-4" >
                     <input  class="form-control form-control-lg" 
                     type="text"
-                   
+                    v-model= "state.form.resume_title"
 										placeholder="
                                     이력서 제목을 입력하세요(100자까지 가능)*">
                 </div>
@@ -97,36 +97,29 @@ import {reactive} from "vue";
 
 export default {
   setup(){
-    const state = reactive({
+    
+  const state = reactive({
       resumes: [],
-      form:{
+      form: {
         resume_title: "",
         resume_gender: "",
         resume_technology: "",
         resume_cv: "",
-        resume_career:"",
+        resume_career: "",
       }
     })
-
+ 
     const submit = () => {
       const args = JSON.parse(JSON.stringify(state.form));
       args.resumes = JSON.stringify(state.resumes);
-
-      axios.post("/resumes",args).then(() => {
-        alert("등록되었습니다.");
-        router.push({path: "/resumeInsert"})
-      }) 
+      axios.post("/resumes", args).then(() => {
+        router.push({path: "/resumes"})
+      })
     }
+ 
     return {state, submit}
   }
- 
-
-  
-  }
-
-
-
-
+}
 </script>
 
 <style>
