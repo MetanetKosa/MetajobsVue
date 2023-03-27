@@ -4,8 +4,15 @@ module.exports = defineConfig({
   lintOnSave: false,
   devServer: {
     proxy: {
-      '/posts' :{
-        target: "http://localhost:8082"
+      // '/posts' :{
+      //   target: "http://localhost:8082",
+      //   changeOrigin: true,
+      //   logLevel: 'debug',
+      // }
+      '/postInsert' :{
+        target: "http://localhost:8082",
+        changeOrigin: true,
+        logLevel: 'debug',
       }
     }
     

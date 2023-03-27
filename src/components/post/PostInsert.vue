@@ -13,7 +13,7 @@
         </ol>
       </nav>
       <!-- Page content-->
-      <form role = "form" method = "post" action="/post/postInsert">
+      <form role = "form" method = "post" action="/post/postInsert" @submit.prevent="onSave">
       <div class="row justify-content-center pb-sm-2">
         <div class="col-lg-11 col-xl-10">
           <!-- Page title-->
@@ -33,14 +33,16 @@
                   <input
                   class="form-control form-control-lg" type="text" 
                   placeholder=""
-                  id = 'postTitle' name='postTitle' required>
+                  v-model="postTitle"
+                  id = 'postTitle' name='postTitle'  required>
               </div>
               <div class="col-sm-6 mb-4">
                 <label class="form-label" for="pr-sn">직종<span
                   class='text-danger'>*</span></label> <input
                   class="form-control form-control-lg" type="text" 
                   placeholder=""
-                  id = 'postJob' name='postJob' required>
+                  id = 'postJob' name='postJob'
+                  v-model="postJob" required>
               </div>
               <div class="col-sm-6 mb-4">
                 <label class="form-label" >연봉/급여<span
@@ -48,12 +50,14 @@
                   <input
                   class="form-control form-control-lg" 
                   placeholder="" 
+                  v-model="postJob"
                   id = 'postSal' name='postSal' required>
               </div>
               <div class="col-sm-6 mb-4">
                 <label class="form-label" for="pr-phone">지원자 연령</label> <input
                   class="form-control form-control-lg" type="text" 
                   placeholder=""
+                  v-model="postAge"
                   id = 'postAge' name='postAge'>
               </div>
               <div class="col-sm-6 mb-4">
@@ -86,7 +90,7 @@
                 <label class="form-label" for="pr-country">경력<span
                   class='text-danger'>*</span></label> <select
                   class="form-select form-select-lg" 
-                  id='postCareer' name='postCareer' required>
+                  id='postCareer' name='postCareer' v-model = "postCareer" required>
                   <option value="" disabled selected></option>
                   <option value="신입">신입</option>
                   <option value="경력">경력</option>
@@ -96,7 +100,7 @@
                 <label class="form-label" for="pr-city">고용형태<span
                   class='text-danger'>*</span></label> <select
                   class="form-select form-select-lg" id='postEmptype'
-                  name='postEmptype' required>
+                  name='postEmptype'  v-model = "postEmptype" required>
                   <option value="" disabled selected></option>
                   <option value="정규직">정규직</option>
                   <option value="계약직">계약직</option>
@@ -109,7 +113,7 @@
                 <label class="form-label" for="pr-city">학력조건<span
                   class='text-danger'>*</span></label> <select
                   class="form-select form-select-lg" 
-                  id='postEdu' name='postEdu' required>
+                  id='postEdu' name='postEdu' v-model = "postEdu" required>
                   <option value="" disabled selected></option>
                   <option value="고졸">고졸</option>
                   <option value="초대졸">초대졸</option>
@@ -120,24 +124,24 @@
               <div class="col-12 mb-4">
                 <label class="form-label" for="pr-address">근무지</label> <input
                   class="form-control form-control-lg" type="text"
-                  id='postAdd'  name='postAdd' placeholder=""/>
+                  id='postAdd'  name='postAdd' v-model = "postAdd" placeholder=""/>
               </div>
               <div class="col-12 mb-4">
                 <label class="form-label" for="pr-address">지원방법</label> 
-                <textarea class="form-control form-control-lg" style= "height:100px" id='postHow' name='postHow' placeholder=""  ></textarea>
+                <textarea class="form-control form-control-lg" style= "height:100px" id='postHow' name='postHow' v-model = "postHow" placeholder=""  ></textarea>
               </div>
             </div>
 
             <div class="border-top pt-4">
               <label class="form-label fw-bold py-2 mb-1" for="pr-position">홈페이지URL</label>
-              <input class="form-control form-control-lg mb-4" type="text"
+              <input class="form-control form-control-lg mb-4" type="text"  v-model = "postUrl"
                 id='postUrl'  name='postUrl' placeholder="URL을 입력해주세요"
                 required>
 
             </div>
             <div style = "align: right">
             <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto"
-           type = "submit" >등록<i
+           @click="submit()" >등록<i
           class="fi-chevron-right fs-sm ms-2"></i></button>
           </div>
           </div>
@@ -167,9 +171,57 @@
 </template>
 
 <script>
-
+import axios from 'axios';
+import { reactive } from 'vue';
 export default {
 
+  setup(){
+    const state = reactive({
+      form:{
+        postTitle: "",
+        postJob:"",
+        postCareer:"",
+        postEmptype:"",
+        postAdd:"",
+        postSal:"",
+        postEdu:"",
+        postAge:"",
+        postHow:"",
+        postUrl:""
+      }
+    })
+    const submit = async () => {
+      // let res;
+      // const axios = require('axios');
+      
+      // const data = {
+      //   postTitle: postTitle.value,
+      //   postJob:postJob.value,
+      //   postCareer:postCareer.value,
+      //   postEmptype:postEmptype.value,
+      //   postAdd:postAdd.value,
+      //   postSal:postSal.value,
+      //   postEdu:postEdu.value,
+      //   postAge:postAge.value,
+      //   postHow:postHow.value,
+      //   postUrl:postUrl.value
+
+      //           };
+
+          // axios.post('http://localhost:8082/postInsert',data);
+          const args = JSON.parse(JSON.stringify(state.form));
+          axios.post("/postInsert", args).then(() => {
+           alert('공고가 등록되었습니다.');
+            router.push({path: "/postList"})
+          })
+              
+          } 
+
+      return {
+        submit,
+      };
+  
+  }
 }
 </script>
 
@@ -180,3 +232,13 @@ export default {
 @import "./assets/resources/vendor/flatpickr/dist/flatpickr.min.js";
 @import "./assets/resources/js/theme.min.js"; */
 </style>
+
+<!-- console.log("postTitle 값 확인: " +postTitle.value);
+console.log("postJob 값 확인: " +postJob.value);
+console.log("postCareer 값 확인: " +postCareer.value);
+console.log("postEmptype 값 확인: " +postEmptype.value);
+console.log("postSal 값 확인: " +postSal.value);
+console.log("postEdu 값 확인: " +postEdu.value);
+console.log("postAge 값 확인: " +postAge.value);
+console.log("postHow 값 확인: " +postHow.value);
+console.log("postUrl 값 확인: " +postUrl.value); -->
