@@ -94,10 +94,11 @@
 <script>
 import axios from "axios";
 import {reactive} from "vue";
+import {useRouter} from 'vue-router';
 
 export default {
   setup(){
-    
+    const router = useRouter();
   const state = reactive({
       resumes: [],
       form: {
@@ -112,8 +113,8 @@ export default {
     const submit = () => {
       const args = JSON.parse(JSON.stringify(state.form));
       args.resumes = JSON.stringify(state.resumes);
-      axios.post("/resumes", args).then(() => {
-        router.push({path: "/resumes"})
+      axios.post("/users/1/resumes", args).then(() => {
+        router.push({path: "/resume"});
       })
     }
  
