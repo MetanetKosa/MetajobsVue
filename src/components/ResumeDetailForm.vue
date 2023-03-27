@@ -14,9 +14,8 @@
                 <div class="col-12 mb-4" >
                     <input  class="form-control form-control-lg" 
                     type="text"
-                   
-										placeholder="
-                                    이력서 제목을 입력하세요(100자까지 가능)*">
+                   v-model= "resumes.resume_title"
+										>
                 </div>
                   <div class="order-sm-1">
                     <h4 class="h5">기본정보</h4>
@@ -31,7 +30,7 @@
                 <div class="row">
                   <div class="col-sm-6 mb-4">
                     <select  class="form-select form-select-lg" id="pr-country"
-											v-model= "state.form.resume_gender"
+											
                        required>
 					    <option value="" disabled selected>성별*</option>
 						<option value="여">여</option>
@@ -40,7 +39,7 @@
                   </div>
                   <div class="col-sm-6 mb-4">
                     <select  class="form-select form-select-lg" id="pr-city"
-											v-model= "state.form.resume_career"
+											
                       
                        required>
 											<option value="" disabled selected>경력여부*</option>
@@ -52,15 +51,16 @@
               <div class="col-12 mb-4">
 									<label class="form-label fw-bold pb-1 mb-2">보유기술 및 능력</label> 
                   <input class="form-control form-control-lg" type="text"
-										id="pr-address" v-model= "state.form.resume_technology"
+										id="pr-address" 
                     
 										placeholder="보유기술 입력(ex.문서작성능력, java 등)">
 							</div>
               <div class="col-12 mb-4">
-									<label class="form-label fw-bold pb-1 mb-2">자기소개서</label>
+									<label class="form-label fw-bold pb-1 mb-2" >자기소개서</label>
 									<textarea  class="form-control form-control-lg" id="pr-address"
-										v-model= "state.form.resume_cv" cols="30" rows="10" 
-                    placeholder="내용을 입력하세요 "
+										 cols="30" rows="10" 
+        
+                    v-model= "resumes.resume_cv"
 										style="height: 272px; resize: none;"></textarea>
 							</div>
               <div class="d-md-flex align-items-center mb-4 pb-md-2">
@@ -92,35 +92,12 @@
 
 
 <script>
-import axios from "axios";
-import {reactive} from "vue";
+
 
 export default {
-  setup(){
-    const state = reactive({
-      resumes: [],
-      form:{
-        resume_title: "",
-        resume_gender: "",
-        resume_technology: "",
-        resume_cv: "",
-        resume_career:"",
-      }
-    })
-
-    const submit = () => {
-      const args = JSON.parse(JSON.stringify(state.form));
-      args.resumes = JSON.stringify(state.resumes);
-
-      axios.post("/resumes",args).then(() => {
-        alert("등록되었습니다.");
-        router.push({path: "/resumeInsert"})
-      }) 
-    }
-    return {state, submit}
+  props:{
+    resumes: Object,
   }
- 
-
   
   }
 

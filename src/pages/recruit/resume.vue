@@ -1,16 +1,15 @@
 <template>
-  <!-- <ResumeForm  />  -->
-   <ResumeList :resumes="state.resumes" /> 
+   <ResumeList :resumes="state.resumes" />  
 </template>
 
 <script>
 import axios from "axios";
 import {reactive} from "vue";
-import ResumeForm from '@/components/ResumeForm.vue';
+// import ResumeForm from '@/components/ResumeForm.vue';
 import ResumeList from '@/components/ResumeList.vue';
 export default {  
   components: {
-    ResumeList
+    ResumeList,
   },
   setup(){
     const state = reactive({

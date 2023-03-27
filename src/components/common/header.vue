@@ -37,7 +37,7 @@
                         <li class="nav-item dropdown me-lg-2">
                             <a class="nav-link align-items-center pe-lg-4" href="${path}/resume/resumeList?mem_no=1" >
                                 <!-- <i class="fi-layers me-2"></i> -->
-                                <router-link class="nav-link fi-layers me-2" :to="{name: 'Resume'}">나의 이력서</router-link>
+                                <router-link class="nav-link fi-layers me-2" :to="{name: 'Resumes'}">나의 이력서</router-link>
                             </a>
                         </li>
 
