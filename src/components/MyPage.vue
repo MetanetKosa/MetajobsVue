@@ -86,7 +86,7 @@
                                             </div>
                                             <div style="margin-left:650px;">                             
                                                 <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto" type="submit">정보 수정</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto" type="button" data-oper=''>회원 탈퇴</button>
+                                                <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto" type="button" @click="deleteMember">회원 탈퇴</button>
                                             </div>
                                         </form>
                                     </div>
@@ -142,7 +142,7 @@ export default {
 
     const member = ref([]);
 
-    axios.get('api/users/member11').then(({data}) => {
+    axios.get('api/users/member1111').then(({data}) => {
         member.value = data;
         console.log(member);
     })
@@ -152,7 +152,7 @@ export default {
     const state = reactive({
         members: [],
         form: {
-            mem_id: "member11",
+            mem_id: "member1111",
             mem_birth: '',
             mem_phone: '',
             mem_address: '',
@@ -164,18 +164,27 @@ export default {
         const args = JSON.parse(JSON.stringify(state.form));
         args.members = JSON.stringify(state.members);
         console.log(args.members);
-        axios.put('/api/users/member11', args).then(() => {
+        axios.put('/api/users/member1111', args).then(() => {
             alert("회원정보 수정 완료!");
-            router.push({path: "/"})
+            router.push({path: "/mypage"})
         })
     }
 
+    const deleteMember = () => {
+        if (confirm("정말 탈퇴하시겠습니까?")) {
+            axios.delete("/api/users/member1111").then(() => {
+                alert("탈퇴되었습니다")
+                router.push({path: "/"})
+            })
+        }
 
+    }
 
     return {
         member,
         state,
         update,
+        deleteMember,
     }
     
 }
