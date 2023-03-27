@@ -50,9 +50,12 @@
                     </ul>																						
                 
                 
-                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'SignIn'}">Sign in</router-link></a>
-                	<a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" href="#signup-modal"><i class="fi-plus me-2"></i><router-link class="nav-link" :to="{name: 'SignUp'}">Sign<span class='d-none d-sm-inline'> Up</span></router-link></a>
-                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signup-modal"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'MyPage'}">My<span class='d-none d-sm-inline'> Page</span></router-link></a>
+                    <!-- <div class="login" v-if="${login == null}"></div> -->
+                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'SignIn'}">Sign in</router-link></a>
+                	<a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" href="#"><i class="fi-plus me-2"></i><router-link class="nav-link" :to="{name: 'SignUp'}">Sign<span class='d-none d-sm-inline'> Up</span></router-link></a>
+
+                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'MyPage'}">My<span class='d-none d-sm-inline'> Page</span></router-link></a>
+                	<a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" @click="logOut" href="#"><i class="fi-minus me-2"></i><router-link class="nav-link" :to="{name: 'Home'}">Sign<span class='d-none d-sm-inline'> Out</span></router-link></a>
 
                 <!-- 로그인하지 않은 상태 -->
                 <c:if test = "${member == null}">
@@ -75,7 +78,24 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { useRouter } from 'vue-router';
 export default {
+    setup() {
+        const router = useRouter();
+
+        const logOut = () => {
+            axios.get("/api/users/logout");
+            alert("로그아웃 완료");
+            // router.push({
+            //     name: "Home"
+            // })
+        }
+
+        return {
+            logOut,
+        }
+    }
 
 }
 </script>
