@@ -100,7 +100,7 @@ export default {
             args.members = JSON.stringify(state.members);
             axios.post("/api/users/login", args).then(() => {
                 alert("로그인 완료!");
-                router.push({path: "/"})
+                router.push({path: "/mypage"})
             })
         }
 

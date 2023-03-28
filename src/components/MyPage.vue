@@ -84,7 +84,8 @@
                                                 <label class="form-label" for="email">Email &nbsp;&nbsp;</label>
                                                 <input class="form-control" type="text" id="email" v-model="state.form.mem_email" placeholder="회원 email" required>
                                             </div>
-                                            <div style="margin-left:650px;">                             
+                                            <br>
+                                            <div id="btn_group" style="float:right;">                             
                                                 <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto" type="submit">정보 수정</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto" type="button" @click="deleteMember">회원 탈퇴</button>
                                             </div>
