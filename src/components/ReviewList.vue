@@ -36,6 +36,7 @@
                 <div class="col-2">
                     <h6 class="fs-xs mb-0">면접일</h6>
                     <h6 class="fs-xs fw-light mb-0">
+                        {{review.reDate}}
                         <fmt:formatDate pattern="yyyy년 MM월 dd일" value="${review.reDate}" />
                     </h6>
                     <h6 class="fs-xs pt-2 mb-0">면접인원</h6>
