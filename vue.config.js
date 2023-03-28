@@ -10,11 +10,11 @@ module.exports = defineConfig({
       //   changeOrigin: true,
       //   logLevel: 'debug',
       // }
-      '/postInsert' :{
-        target: "http://localhost:8082",
-        changeOrigin: true,
-        logLevel: 'debug',
-      },
+      // '/postInsert' :{
+      //   target: "http://localhost:8082",
+      //   changeOrigin: true,
+      //   logLevel: 'debug',
+      // },
     // '/users': {
     //   target: 'http://localhost:8082',
     //   changeOrigin: true,
