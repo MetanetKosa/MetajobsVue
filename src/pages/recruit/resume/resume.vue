@@ -6,7 +6,7 @@
 import axios from "axios";
 import {reactive} from "vue";
 // import ResumeForm from '@/components/ResumeForm.vue';
-import ResumeList from '@/components/ResumeList.vue';
+import ResumeList from '@/components/resume/ResumeList.vue';
 export default {  
   components: {
     ResumeList,
