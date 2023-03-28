@@ -5,6 +5,7 @@ import Resumes from '../pages/recruit/resume.vue';
 import Resume from '../pages/recruit/resumedetail.vue';
 import ResumeInsert from '@/components/ResumeForm.vue';
 
+import PostInsert from '@/components/post/PostInsert.vue';
 import PostList from '../pages/recruit/post.vue';
 import Review from '../pages/recruit/review.vue';
 import SignUp from '@/components/SignUp.vue';
@@ -12,8 +13,7 @@ import SignIn from '@/components/SignIn.vue';
 import MyPage from '@/components/MyPage.vue';
 
 // import PostList from '@/components/post/PostList.vue';   
-import PostInsert from '@/components/post/PostInsert.vue';
-// import PostDetail from '@/components/post/PostDetail.vue';
+import PostDetail from '@/components/post/PostDetail.vue';
 
 
 const router = createRouter({
@@ -75,11 +75,11 @@ const router = createRouter({
             name: 'PostInsert',
             component: PostInsert
         },
-        // {
-        //     path: '/postDetail/:postNo',
-        //     name: 'PostDetail',
-        //     component: PostDetail
-        // },
+        {
+            path: '/postDetail/:postNo',
+            name: 'PostDetail',
+            component: PostDetail
+        },
         {
             path: '/review',
             name: 'Review',
