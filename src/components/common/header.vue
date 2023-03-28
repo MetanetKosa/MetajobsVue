@@ -1,7 +1,7 @@
 <template>
-   <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header>
+   <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header style="background-color: white;">
             <div class="container">
-                <router-link class="nav-link " :to="{name: 'Home'}" ><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></router-link>
+                <router-link class="nav-link " :to="{name: 'Home'}" ><img class="d-block" src="img/logo/metajobs_logo.png" width="116" alt="Finder"></router-link>
                 <!-- <a class="navbar-brand me-3 me-xl-4" href="${path}/"><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></a> -->
                 
                 <!-- ************************************* 로그인 로그아웃 버튼 -->
