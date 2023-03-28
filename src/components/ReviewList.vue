@@ -1,17 +1,24 @@
 <template lang="">
-    <div v-for="(review) in reviews"
+    <div v-for="(review, index) in reviews"
         :key = "review.rno">
         <div class="mb-2 pb-4 border-bottom">
             <div class="d-flex justify-content-between mb-3">
                 <div class="d-flex align-items-center pe-2"><img class="rounded-circle me-1" src="../../public/img/avatars/13.png" width="48" alt="Avatar">
                     <div class="ps-2">
                         <!-- 변경된 부분 -->
-                        <h6 class="fs-base mb-0">
-                            <!-- <c:if test="${review.cno==1234}">메타넷디지털</c:if>
-                            <c:if test="${review.cno==1235}">대한기업</c:if>
-                            <c:if test="${review.cno==1236}">한국유통</c:if> -->
-                            {{review.rno}}
+                        <h6 v-if="review.cno==1234" class="fs-base mb-0">
+                            메타넷디지털
                         </h6>
+                        <h6 v-if="review.cno==1235" class="fs-base mb-0">
+                            대한기업
+                        </h6>
+                        <h6 v-if="review.cno==1236" class="fs-base mb-0">
+                            한국유통
+                        </h6>
+                            <!-- <v-if="${review.cno==1234}">메타넷디지털</v-if>
+                            <v-if="${review.cno==1235}">대한기업</v-if>
+                            <v-if="${review.cno==1236}">한국유통</v-if> -->
+                          
 
                         <!-- 여기까지 -->
                         <h6 class="fs-sm mb-0">{{review.reJob}}</h6>
@@ -21,7 +28,7 @@
                     <span class="fs-sm"><fmt:formatDate pattern="yyyy년 MM월 dd일" value="${review.reDate}"/></span>
                         <form id="deleteForm" action="${path}/review/delete" method="post">
                             <input type="hidden" name="rno" value="${review.rno}">
-                            <span><button class="btn btn-primary" type="submit">삭제</button></span>
+                            <span><button class="btn btn-primary" @click.stop="$event => deleteReview(index)">삭제</button></span>
                         </form>
                 </div>
             </div>
@@ -55,8 +62,17 @@ export default {
             required: true
         }
     },
-    setup(prop){
+    emits: ['delete-review'],
+    setup(props,{emit}){
         const router = useRouter();
+
+        const deleteReview = (index) => {
+            emit('delete-review', index);
+        }
+
+        return {
+            deleteReview,
+        }
     }
 }
 </script>
