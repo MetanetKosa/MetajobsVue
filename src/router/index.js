@@ -4,11 +4,18 @@ import Member from '../pages/recruit/member.vue';
 import Resumes from '../pages/recruit/resume.vue';
 import Resume from '../pages/recruit/resumedetail.vue';
 import ResumeInsert from '@/components/ResumeForm.vue';
-import Post from '../pages/recruit/post.vue';
+
+import PostModify from '@/components/post/PostModify.vue';
+import PostInsert from '@/components/post/PostInsert.vue';
+import PostList from '../pages/recruit/post.vue';
 import Review from '../pages/recruit/review.vue';
 import SignUp from '@/components/SignUp.vue';
 import SignIn from '@/components/SignIn.vue';
 import MyPage from '@/components/MyPage.vue';
+
+// import PostList from '@/components/post/PostList.vue';   
+import PostDetail from '../pages/recruit/postDetail.vue';
+
 
 
 const router = createRouter({
@@ -61,9 +68,24 @@ const router = createRouter({
         },
         
         {
-            path: '/post',
-            name: 'Post',
-            component: Post
+            path: '/postList',
+            name: 'PostList',
+            component: PostList
+        },
+        {
+            path: '/postInsert',
+            name: 'PostInsert',
+            component: PostInsert
+        },
+        {
+            path: '/postModify',
+            name: 'PostModify',
+            component: PostModify
+        },
+        {
+            path: '/postDetail/:postNo',
+            name: 'PostDetail',
+            component: PostDetail
         },
         {
             path: '/review',

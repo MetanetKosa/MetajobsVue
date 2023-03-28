@@ -48,7 +48,7 @@
                 </div>
             
             <div class="col-md-9">
-                <div class="card bg-secondary card-hover mb-2" v-for="(resume,index) in resumes" :key="resume.resume_no" >
+                <div class="card bg-secondary card-hover mb-2" v-for="(resume) in resumes" :key="resume.resume_no" >
                     <div class="card-body" >
                         <div class="d-flex justify-content-between">
                               <div class="d-flex align-items-start"><img class="d-none d-sm-block" src="img/avatars/38.png" width="100" alt="Resume picture">
