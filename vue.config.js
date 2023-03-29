@@ -2,6 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
+<<<<<<< HEAD
 devServer: {
   proxy: {
     '/users': {
@@ -9,11 +10,40 @@ devServer: {
       changeOrigin: true,
       logLevel: 'debug',
       }
+=======
+
+  devServer: {
+    proxy: {
+      '/post' :{
+        target: "http://localhost:8082",
+        changeOrigin: true,
+        logLevel: 'debug',
+      }
+      // '/postInsert' :{
+      //   target: "http://localhost:8082",
+      //   changeOrigin: true,
+      //   logLevel: 'debug',
+      // },
+    // '/users': {
+    //   target: 'http://localhost:8082',
+    //   changeOrigin: true,
+    //   logLevel: 'debug',
+    //   },
+
+      // '/resumes': {
+      //   target: 'http://localhost:8082',
+      //   changeOrigin: true,
+      //   logLevel: 'debug',
+      //   }
+
+>>>>>>> post
     }
+    
   }
 })
 
 // module.exports = {
+
 //   devServer: {
 //     proxy: "http://localhost:8082"
 //   }

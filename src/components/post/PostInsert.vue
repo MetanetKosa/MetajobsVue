@@ -13,7 +13,7 @@
         </ol>
       </nav>
       <!-- Page content-->
-      <form role = "form" method = "post" action="/post/postInsert" @submit.prevent="onSave">
+      <form role = "form" method = "post" @submit.prevent="onSave">
       <div class="row justify-content-center pb-sm-2">
         <div class="col-lg-11 col-xl-10">
           <!-- Page title-->
@@ -141,7 +141,7 @@
             </div>
             <div style = "align: right">
             <button class="btn btn-primary btn-lg rounded-pill ms-sm-auto"
-           @click="submit()" >등록<i
+           type="submit" >등록<i
           class="fi-chevron-right fs-sm ms-2"></i></button>
           </div>
           </div>
@@ -153,18 +153,10 @@
 
   </main>
 
-  <!-- Back to top button-->
+
   <a class="btn-scroll-top" href="#top" data-scroll><span
     class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i
     class="btn-scroll-top-icon fi-chevron-up"> </i></a>
-  <!-- Vendor scrits: js libraries and plugins-->
-  <!-- <script src="${path}/resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
-  <!-- <script src="${path}/resources/vendor/simplebar/dist/simplebar.min.js"></script>
-  <script src="${path}/resources/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-        <script src="${path}/resources/vendor/flatpickr/dist/flatpickr.min.js"></script> -->
-  
-  <!-- Main theme script-->
-  <!-- <script src="${path}/resources/js/theme.min.js"></script> -->
 
 </body>
 
@@ -172,12 +164,11 @@
 
 <script>
 import axios from 'axios';
-import { reactive } from 'vue';
+import { reactive,ref } from 'vue';
 export default {
 
   setup(){
-    const state = reactive({
-      form:{
+    const post = ref({
         postTitle: "",
         postJob:"",
         postCareer:"",
@@ -188,38 +179,31 @@ export default {
         postAge:"",
         postHow:"",
         postUrl:""
-        
-      }
     })
-    const submit = async () => {
+
+    const onSave = async () => {
       // let res;
       // const axios = require('axios');
       
-      // const data = {
-      //   postTitle: postTitle.value,
-      //   postJob:postJob.value,
-      //   postCareer:postCareer.value,
-      //   postEmptype:postEmptype.value,
-      //   postAdd:postAdd.value,
-      //   postSal:postSal.value,
-      //   postEdu:postEdu.value,
-      //   postAge:postAge.value,
-      //   postHow:postHow.value,
-      //   postUrl:postUrl.value
+      const data = {
+          postTitle: postTitle.value,
+          postJob:postJob.value,
+          postCareer:postCareer.value,
+          postEmptype:postEmptype.value,
+          postAdd:postAdd.value,
+          postSal:postSal.value,
+          postEdu:postEdu.value,
+          postAge:postAge.value,
+          postHow:postHow.value,
+          postUrl:postUrl.value
+        };
 
-      //           };
-
-          // axios.post('http://localhost:8082/postInsert',data);
-          const args = JSON.parse(JSON.stringify(state.form));
-          axios.post("/postInsert", args).then(() => {
-           alert('공고가 등록되었습니다.');
-            router.push({path: "/postList"})
-          })
+        //await axios.post(`localhost:8082/postInsert`,data);
               
-          } 
+      } 
 
       return {
-        submit,
+        onSave,
       };
   
   }
@@ -243,3 +227,10 @@ console.log("postEdu 값 확인: " +postEdu.value);
 console.log("postAge 값 확인: " +postAge.value);
 console.log("postHow 값 확인: " +postHow.value);
 console.log("postUrl 값 확인: " +postUrl.value); -->
+
+<!-- // axios.post('http://localhost:8082/postInsert',data);
+//       const args = JSON.parse(JSON.stringify(state.form));
+//       axios.post("/postInsert", args).then(() => {
+//        alert('공고가 등록되었습니다.');
+//         router.push({path: "/postList"})
+//       }) -->

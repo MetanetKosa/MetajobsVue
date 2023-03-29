@@ -15,14 +15,14 @@
                         <li class="nav-item dropdown me-lg-2">
                             <a class="nav-link align-items-center pe-lg-4" href="${path}/post/postGet" >
                                 <!-- <i class="fi-layers me-2"></i>공고 등록 -->
-                                <router-link class="nav-link fi-layers me-2" :to="{name: 'Post'}" >공고 등록</router-link>
+                                <router-link class="nav-link fi-layers me-2" :to="{name: 'PostInsert'}" >공고 등록</router-link>
                                 <span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span>
                             </a>
                         </li>
                         <li class="nav-item dropdown me-lg-2">
                             <a class="nav-link  align-items-center pe-lg-4" href="${path}/post/postList" >
                                 <!-- <i class="fi-layers me-2"></i>공고 목록 -->
-                                <router-link class="nav-link fi-layers me-2" :to="{name: 'Post'}" >공고 목록</router-link>
+                                <router-link class="nav-link fi-layers me-2" :to="{name: 'PostList'}" >공고 목록</router-link>
                                 <span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span>
                             </a>
                         </li>
@@ -41,8 +41,8 @@
                             </a>
                         </li>
 
-                        
-
+                        <!-- <router-link class="nav-link fi-layers me-2" :to="{name: 'PostDetail'}" >공고 목록</router-link>
+                        <router-link class="nav-link fi-layers me-2" :to="{name: 'PostModify'}" >공고 목록</router-link> -->
                         <!-- <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal">Sign in</a></li> -->
                     
                         
