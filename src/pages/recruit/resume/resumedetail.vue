@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ResumeDetail from '@/components/ResumeDetailForm.vue';
+import ResumeDetail from '@/components/resume/ResumeDetailForm.vue';
 import {useRoute, useRouter} from 'vue-router';
 import axios from 'axios';
 import {ref} from '@vue/reactivity';

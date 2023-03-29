@@ -21,7 +21,7 @@
             </div>
             <ul class="list-unstyled d-none d-lg-flex flex-wrap fs-sm mb-0">
               <li class="border-end mb-0"><button type="button"  @click.stop="deleteResume(resumes.resume_no)" id="delete"  class="btn btn-sm text-primary d-none d-lg-block order-lg-3" data-oper='delete' ><i class="fi-trash me-1"></i><span class="align-middle">삭제</span></button></li>
-              <li class="border-end mb-0"><button type="button"  class="btn btn-sm text-primary d-none d-lg-block order-lg-3" data-oper="modify"><i class="fi-archive me-1"></i><span class="align-middle">수정</span></button></li>                                  
+              <li class="border-end mb-0"><button type="button"  @click="resumeUpdate(resumes.resume_no)" class="btn btn-sm text-primary d-none d-lg-block order-lg-3" data-oper="modify"><i class="fi-archive me-1"></i><span class="align-middle">수정</span></button></li>                                  
             </ul>
           </div>
         </div>
@@ -29,13 +29,13 @@
           <div class="card-body p-4">
            <div class="d-sm-flex justify-content-between align-items-start pb-4">
              <div class="order-sm-1">
-               <h3 class="h4 mb-sm-4">${member.mem_name}</h3>
+               <h3 class="h4 mb-sm-4">김시은</h3>
                <h4 class="h5">기본정보</h4>
               <ul class="list-unstyled text-nav">
-                <li><span class='text-muted'>생년월일:</span><fmt:formatDate pattern="YYYY/MM/dd" value ="${member.mem_birth}"/></li>
-                <li><span class='text-muted'>휴대폰번호:</span>${member.mem_phone}</li>
-                <li><span class='text-muted'>주소:</span>${member.mem_address}</li>
-                <li><span class='text-muted'>이메일:</span>${member.mem_email}</li>
+                <li><span class='text-muted'>생년월일:</span><fmt:formatDate pattern="YYYY/MM/dd" value ="${member.mem_birth}"/>980705</li>
+                <li><span class='text-muted'>휴대폰번호:</span>010-1234-5678</li>
+                <li><span class='text-muted'>주소:</span>서울</li>
+                <li><span class='text-muted'>이메일:</span>aaa@naver.com</li>
                 <li><span class='text-muted'>성별:</span> {{resumes.resume_gender}}</li>
                 <li><span class='text-muted'>경력여부:</span> {{resumes.resume_career}}</li>
               </ul>
@@ -63,22 +63,38 @@
 
 
 <script>
-
+import {useRouter} from 'vue-router';
 
 export default {
   props:{
     resumes: Object,
   },
-  emits: ['delelte-resume'],
+  
+  emits: ['delelte-resume','update-resume'],
 
   setup(props, {emit}){
+    const router = useRouter();
 
     const deleteResume = (resumeNo) => {
       emit('delete-resume', resumeNo);
     }
 
+     const updateResume = (resumeNo) => {
+      emit('update-resume', resumeNo);
+    }
+
+    const resumeUpdate = (resumeNo) => {
+       router.push({
+                name:'ResumeModify',
+                params:{
+                    id: resumeNo
+                }
+            })
+    }
     return {
       deleteResume,
+      updateResume,
+      resumeUpdate,
     }
   }
   

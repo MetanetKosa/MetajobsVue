@@ -9,7 +9,7 @@
             <h2 class="h4 mb-4">
                 <i class="fi-info-circle text-primary fs-5 mt-n1 me-2"></i>이력서
             </h2>
-            <form  @submit.prevent = "onSave" role="form" >
+            <form  @submit.prevent ="onSave" role="form" >
               <div class="row">
                 <div class="col-12 mb-4" >
                     <input  class="form-control form-control-lg" 
@@ -21,10 +21,10 @@
                   <div class="order-sm-1">
                     <h4 class="h5">기본정보</h4>
                     <ul class="list-unstyled text-nav">
-                      <li><span class='text-muted'>생년월일:</span></li>
-                      <li><span class='text-muted'>휴대폰번호:</span></li>
-                      <li><span class='text-muted'>주소:</span></li>
-                      <li><span class='text-muted'>이메일:</span></li>
+                     <li><span class='text-muted'>생년월일:980705</span></li>
+                      <li><span class='text-muted'>휴대폰번호:010-1234-5678</span></li>
+                      <li><span class='text-muted'>주소:서울</span></li>
+                      <li><span class='text-muted'>이메일:aaa@naver.com</span></li>
                     </ul>
                   </div>
                 </div>
@@ -94,10 +94,11 @@
 <script>
 import axios from "axios";
 import {reactive} from "vue";
+import {useRouter} from 'vue-router';
 
 export default {
   setup(){
-    
+  const router = useRouter();
   const state = reactive({
       resumes: [],
       form: {
@@ -112,8 +113,8 @@ export default {
     const submit = () => {
       const args = JSON.parse(JSON.stringify(state.form));
       args.resumes = JSON.stringify(state.resumes);
-      axios.post("/resumes", args).then(() => {
-        router.push({path: "/resumes"})
+      axios.post("/users/1/resumes", args).then(() => {
+        router.push({path: "/resume"});
       })
     }
  
