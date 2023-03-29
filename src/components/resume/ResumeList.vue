@@ -80,7 +80,7 @@
                                         <button class="dropdown-item" type="button"><i class="fi-trash opacity-60 me-2"></i>Delete</button>
                                     </li>
                                     </ul>
-                                </div><strong class="fs-sm">{{resume.resume_updateDate}}<fmt:formatDate pattern="YYYY-MM-dd"/></strong>
+                                </div><strong class="fs-sm">{{resume.updateDate}}</strong>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@ export default {
                     resume_gender:'',
                     resume_title:'',
                     resume_technology:'',
-                    resume_updateDate:''};
+                    updateDate:''};
         }
     },
     setup(props){
