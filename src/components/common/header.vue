@@ -1,7 +1,7 @@
 <template>
-   <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header>
+   <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header style="background-color: white;">
             <div class="container">
-                <router-link class="nav-link " :to="{name: 'Home'}" ><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></router-link>
+                <router-link class="nav-link " :to="{name: 'Home'}" ><img class="d-block" src="img/logo/metajobs_logo.png" width="116" alt="Finder"></router-link>
                 <!-- <a class="navbar-brand me-3 me-xl-4" href="${path}/"><img class="d-block" src="img/logo/logo-dark.svg" width="116" alt="Finder"></a> -->
                 
                 <!-- ************************************* 로그인 로그아웃 버튼 -->
@@ -29,7 +29,7 @@
                         <li class="nav-item dropdown me-lg-2">
                             <a class="nav-link align-items-center pe-lg-4" href="${path}/review/reviewList" >
                                 <!-- <i class="fi-layers me-2"></i> -->
-                                <router-link class="nav-link fi-layers me-2" :to="{name: 'Review'}">면접 후기</router-link>
+                                <router-link class="nav-link fi-layers me-2 px-1" :to="{name: 'Review'}">면접 후기</router-link>
                                 <span class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y border-end" style="width: 1px; height: 30px;"></span>
                             </a>
                         </li>
@@ -50,9 +50,14 @@
                     </ul>																						
                 
                 
-                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'SignIn'}">Sign in</router-link></a>
-                	<a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" href="#signup-modal"><i class="fi-plus me-2"></i><router-link class="nav-link" :to="{name: 'SignUp'}">Sign<span class='d-none d-sm-inline'> Up</span></router-link></a>
-                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signup-modal"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'MyPage'}">My<span class='d-none d-sm-inline'> Page</span></router-link></a>
+                    <!-- <div class="login" v-if="${login == null}"></div> -->
+                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'SignIn'}">Sign in</router-link></a>
+                	<a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" href="#"><i class="fi-plus me-2"></i><router-link class="nav-link" :to="{name: 'SignUp'}">Sign<span class='d-none d-sm-inline'> Up</span></router-link></a>
+
+                    
+                    <!-- <span>김가람&nbsp;님&nbsp;&nbsp;환영합니다&nbsp;:)&nbsp;</span> -->
+                    <a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#"><i class="fi-user me-2"></i><router-link class="nav-link" :to="{name: 'MyPage'}">My<span class='d-none d-sm-inline'> Page</span></router-link></a>
+                	<a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" @click="logOut" href="#"><i class="fi-minus me-2"></i><router-link class="nav-link" :to="{name: 'Home'}">Sign<span class='d-none d-sm-inline'> Out</span></router-link></a>
 
                 <!-- 로그인하지 않은 상태 -->
                 <c:if test = "${member == null}">
@@ -75,7 +80,24 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { useRouter } from 'vue-router';
 export default {
+    setup() {
+        const router = useRouter();
+
+        const logOut = () => {
+            axios.get("/api/users/logout");
+            alert("로그아웃 완료");
+            // router.push({
+            //     name: "Home"
+            // })
+        }
+
+        return {
+            logOut,
+        }
+    }
 
 }
 </script>

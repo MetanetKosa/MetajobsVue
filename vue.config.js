@@ -9,6 +9,9 @@ module.exports = defineConfig({
         target: "http://localhost:8082",
         changeOrigin: true,
         logLevel: 'debug',
+      },
+      '/api': {
+        target: 'http://localhost:8082',
       }
       // '/postInsert' :{
       //   target: "http://localhost:8082",
