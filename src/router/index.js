@@ -9,6 +9,7 @@ import PostModify from '@/components/post/PostModify.vue';
 import PostInsert from '@/components/post/PostInsert.vue';
 import PostList from '../pages/recruit/post.vue';
 import Review from '../pages/recruit/review.vue';
+import ReviewRegist from '../pages/recruit/reviewRegist.vue';
 import SignUp from '@/components/SignUp.vue';
 import SignIn from '@/components/SignIn.vue';
 import MyPage from '@/components/MyPage.vue';
@@ -22,8 +23,7 @@ import PostDetail from '../pages/recruit/postDetail.vue';
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [
-        {
+    routes: [{
             path: '/',
             name: 'Home',
             component: SignIn
@@ -100,8 +100,13 @@ const router = createRouter({
             name: 'Review',
             component: Review
         },
+        {
+            path: '/review/reviewRegist',
+            name: 'ReviewRegist',
+            component: ReviewRegist
+        },
     ]
-        
+
 });
 
 export default router;
