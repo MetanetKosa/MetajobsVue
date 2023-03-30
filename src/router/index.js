@@ -1,20 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from '../pages/home.vue';
 import Member from '../pages/recruit/member.vue';
-<<<<<<< HEAD
 import Resumes from '../pages/recruit/resume/resume.vue';
 import Resume from '../pages/recruit/resume/resumedetail.vue';
 import ResumeInsert from '@/components/resume/ResumeForm.vue';
-import Post from '../pages/recruit/post.vue';
-=======
-import Resumes from '../pages/recruit/resume.vue';
-import Resume from '../pages/recruit/resumedetail.vue';
-import ResumeInsert from '@/components/ResumeForm.vue';
 
 import PostModify from '@/components/post/PostModify.vue';
 import PostInsert from '@/components/post/PostInsert.vue';
 import PostList from '../pages/recruit/post.vue';
->>>>>>> post
 import Review from '../pages/recruit/review.vue';
 import SignUp from '@/components/SignUp.vue';
 import SignIn from '@/components/SignIn.vue';
